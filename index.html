@@ -11,9 +11,9 @@
     <div id="title">
       <h1>School-Tool</h1>
     </div>
-    <table>
+    <table id="stundenplan">
       <thead>
-        <tr>
+        <tr id="ueberschrift-tabelle">
           <th>Uhrzeit</th>
           <th>Montag</th>
           <th>Dienstag</th>
@@ -112,7 +112,7 @@
           <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
         </tr>
         <tr>
-          <td>9:15</td>
+          <td>15:00</td>
           <td>Pause</td>
           <td>Pause</td>
           <td>Pause</td>
@@ -120,7 +120,7 @@
           <td>Pause</td>
         </tr>
         <tr>
-          <td>15:00</td>
+          <td>15:15</td>
           <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
           <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
           <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
@@ -129,7 +129,39 @@
         </tr>
       </tbody>
     </table>
+
+    <br />
+    <button onclick="stundenplanSpeichern()">Speichern</button>
+    <button onclick="stundenplanLaden()">Laden</button>
+    <button onclick="stundenplanZurücksetzen()">Löschen</button>
+
     <script>
+      const zellen = document.querySelectorAll(
+        "#stundenplan td[contenteditable]"
+      );
+
+      function stundenplanSpeichern() {
+        const daten = Array.from(zellen).map((zelle) => zelle.innerText);
+        localStorage.setItem("stundenplan", JSON.stringify(daten));
+        alert("Stundenplan gespeichert!");
+      }
+
+      function stundenplanLaden() {
+        const daten = JSON.parse(localStorage.getItem("stundenplan") || "[]");
+        zellen.forEach((zelle, i) => {
+          zelle.innerText = daten[i] || "";
+          farbeAnpassen(zelle);
+        });
+      }
+
+      function stundenplanZurücksetzen() {
+        localStorage.removeItem("stundenplan");
+        zellen.forEach((zelle) => (zelle.innerText = ""));
+        alert("Stundenplan gelöscht.");
+      }
+
+      window.onload = stundenplanLaden;
+
       function farbeAnpassen(zelle) {
         const inhalt = zelle.innerText.toLowerCase().trim();
 

@@ -4,41 +4,76 @@
 }
 
 .mathe {
+  font-family: "Courier New", Courier, monospace;
   background-color: #84c3fe;
 }
 .deutsch {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #fe9d9d;
 }
 .englisch {
+  font-family: "Times New Roman", Times, serif;
   background-color: #77cc87;
 }
 .informatik {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: #f1f8be;
 }
 .spanisch {
+  font-family: Arial, Helvetica, sans-serif Arial, sans-serif;
   background-color: #fb93b2;
 }
 .erdkunde {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #75a174;
 }
 .sport {
+  font-family: monospace;
   background-color: #b8b8b8;
 }
 .musik {
+  font-family: cursive;
   background-color: #f4f4f4;
 }
 .sowi {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #aac8ae;
 }
 .physik {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #cda5ec;
 }
 .chemie {
+  font-family: "Courier New", Courier, monospace;
   background-color: #edfa95;
 }
 .biologie {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #9affd5;
 }
 .philosophie {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", serif;
   background-color: #81b5d6;
+}
+
+table {
+  background-color: #f1dcdd;
+  width: 60%;
+  height: 100%;
+}
+
+th,
+td {
+  border: 1px solid #fbfafa;
+  padding: 10px;
+  text-align: center;
+}
+
+#ueberschrift-tabelle {
+  background-color: #f5c6c8;
+}
+
+h1 {
+  background-color: #f5c6c8;
+  text-align: center;
 }
