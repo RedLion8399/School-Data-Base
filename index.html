@@ -156,10 +156,27 @@
         </table>
         <button onclick="aufgabeHinzufuegen()">Aufgabe hinzufügen</button>
         <button onclick="aufgabenSpeichern()">Aufgabe speichern</button>
+        <button onclick="erledigteAufgabenLöschen()">
+          Erledigte Aufgaben löschen
+        </button>
       </div>
     </div>
 
     <script>
+      function erledigteAufgabenLöschen() {
+        const tbody = document.querySelector("#aufgaben-tabelle tbody");
+        const zeilen = tbody.querySelectorAll("tr");
+
+        zeilen.forEach((zeile) => {
+          const checkbox = zeile.querySelector("input[type='checkbox']");
+          if (checkbox && checkbox.checked) {
+            tbody.removeChild(zeile);
+          }
+        });
+
+        aufgabenSpeichern(); // Danach neuen Stand speichern
+      }
+
       function aufgabenSpeichern() {
         const zeilen = document.querySelectorAll("#aufgaben-tabelle tbody tr");
         const daten = [];
@@ -175,7 +192,6 @@
         });
 
         localStorage.setItem("hausaufgaben", JSON.stringify(daten));
-        alert("Hausaufgaben gespeichert!");
       }
       function aufgabenLaden() {
         const daten = JSON.parse(localStorage.getItem("hausaufgaben") || "[]");
