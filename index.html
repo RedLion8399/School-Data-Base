@@ -155,10 +155,60 @@
           </tbody>
         </table>
         <button onclick="aufgabeHinzufuegen()">Aufgabe hinzufügen</button>
+        <button onclick="aufgabenSpeichern()">Aufgabe speichern</button>
       </div>
     </div>
 
     <script>
+      function aufgabenSpeichern() {
+        const zeilen = document.querySelectorAll("#aufgaben-tabelle tbody tr");
+        const daten = [];
+
+        zeilen.forEach((zeile) => {
+          const checkbox = zeile.querySelector(
+            "input[type='checkbox']"
+          ).checked;
+          const fach = zeile.cells[1].innerText.trim();
+          const aufgabe = zeile.cells[2].innerText.trim();
+
+          daten.push({ erledigt: checkbox, fach: fach, aufgabe: aufgabe });
+        });
+
+        localStorage.setItem("hausaufgaben", JSON.stringify(daten));
+        alert("Hausaufgaben gespeichert!");
+      }
+      function aufgabenLaden() {
+        const daten = JSON.parse(localStorage.getItem("hausaufgaben") || "[]");
+        const tbody = document.querySelector("#aufgaben-tabelle tbody");
+        tbody.innerHTML = ""; // Tabelle leeren
+
+        daten.forEach((eintrag) => {
+          const zeile = document.createElement("tr");
+
+          const zelleCheckbox = document.createElement("td");
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = eintrag.erledigt;
+          zelleCheckbox.appendChild(checkbox);
+
+          const zelleFach = document.createElement("td");
+          zelleFach.contentEditable = "true";
+          zelleFach.setAttribute("oninput", "farbeAnpassen(this)");
+          zelleFach.innerText = eintrag.fach;
+
+          const zelleAufgabe = document.createElement("td");
+          zelleAufgabe.contentEditable = "true";
+          zelleAufgabe.innerText = eintrag.aufgabe;
+
+          zeile.appendChild(zelleCheckbox);
+          zeile.appendChild(zelleFach);
+          zeile.appendChild(zelleAufgabe);
+          tbody.appendChild(zeile);
+
+          farbeAnpassen(zelleFach); // Farbe gleich anwenden
+        });
+      }
+
       function aufgabeHinzufuegen() {
         const tabelle = document
           .getElementById("aufgaben-tabelle")
@@ -214,8 +264,6 @@
         alert("Stundenplan gelöscht.");
       }
 
-      window.onload = stundenplanLaden;
-
       function farbeAnpassen(zelle) {
         const inhalt = zelle.innerText.toLowerCase().trim();
 
@@ -263,6 +311,10 @@
           zelle.classList.add("erdkunde");
         }
       }
+      window.onload = function () {
+        stundenplanLaden();
+        aufgabenLaden();
+      };
     </script>
   </body>
 </html>
