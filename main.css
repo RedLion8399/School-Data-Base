@@ -1,43 +1,44 @@
 :root {
   background-color: #eebec6;
+  font-style: italic;
 }
 
 .mathe {
-  background-color: #ffdcdc;
+  background-color: #84c3fe;
 }
 .deutsch {
-  background-color: #dcf0ff;
+  background-color: #fe9d9d;
 }
 .englisch {
-  background-color: #d4ffdc;
+  background-color: #77cc87;
 }
 .informatik {
-  background-color: #f0dcff;
+  background-color: #f1f8be;
 }
 .spanisch {
-  background-color: #f0dcff;
+  background-color: #fb93b2;
 }
 .erdkunde {
-  background-color: #f0dcff;
+  background-color: #75a174;
 }
 .sport {
-  background-color: #f0dcff;
+  background-color: #b8b8b8;
 }
 .musik {
-  background-color: #f0dcff;
+  background-color: #f4f4f4;
 }
 .sowi {
-  background-color: #f0dcff;
+  background-color: #aac8ae;
 }
 .physik {
-  background-color: #f0dcff;
+  background-color: #cda5ec;
 }
 .chemie {
-  background-color: #f0dcff;
+  background-color: #edfa95;
 }
 .biologie {
-  background-color: #f0dcff;
+  background-color: #9affd5;
 }
 .philosophie {
-  background-color: #f0dcff;
+  background-color: #81b5d6;
 }
