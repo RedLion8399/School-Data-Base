@@ -77,3 +77,19 @@ h1 {
   background-color: #f5c6c8;
   text-align: center;
 }
+
+#container {
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
+  padding: 10px 80px;
+  box-sizing: border-box;
+}
+
+#hausaufgaben {
+  min-width: 800px;
+}
+
+#ueberschrift-aufgaben {
+  background-color: #f5c6c8;
+}

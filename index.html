@@ -5,137 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>School-Planner</title>
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="main.js" />
   </head>
   <body>
     <div id="title">
-      <h1>School-Tool</h1>
+      <h1>Schul-Organisations-Web-App</h1>
     </div>
-    <table id="stundenplan">
-      <thead>
-        <tr id="ueberschrift-tabelle">
-          <th>Uhrzeit</th>
-          <th>Montag</th>
-          <th>Dienstag</th>
-          <th>Mittwoch</th>
-          <th>Donnerstag</th>
-          <th>Freitag</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>7:40</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>8:30</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>9:15</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-        </tr>
-        <tr>
-          <td>9:35</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>10:20</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>11:05</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-        </tr>
-        <tr>
-          <td>11:25</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>12:10</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>12:55</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-        </tr>
-        <tr>
-          <td>13:30</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>14:15</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-        <tr>
-          <td>15:00</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-          <td>Pause</td>
-        </tr>
-        <tr>
-          <td>15:15</td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-          <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="container">
+      <div id="stundenplaner">
+        <table id="stundenplan">
+          <thead>
+            <tr id="ueberschrift-tabelle">
+              <th>Uhrzeit</th>
+              <th>Montag</th>
+              <th>Dienstag</th>
+              <th>Mittwoch</th>
+              <th>Donnerstag</th>
+              <th>Freitag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7:40</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>8:30</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>9:15</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+            </tr>
+            <tr>
+              <td>9:35</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>10:20</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>11:05</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+            </tr>
+            <tr>
+              <td>11:25</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>12:10</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>12:55</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+            </tr>
+            <tr>
+              <td>13:30</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>14:15</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+              <td>Pause</td>
+            </tr>
+            <tr>
+              <td>15:15</td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+            </tr>
+          </tbody>
+        </table>
 
-    <br />
-    <button onclick="stundenplanSpeichern()">Speichern</button>
-    <button onclick="stundenplanLaden()">Laden</button>
-    <button onclick="stundenplanZurücksetzen()">Löschen</button>
+        <br />
+        <button onclick="stundenplanSpeichern()">Speichern</button>
+        <button onclick="stundenplanLaden()">Laden</button>
+        <button onclick="stundenplanZurücksetzen()">Löschen</button>
+      </div>
+
+      <div id="hausaufgaben">
+        <table id="aufgaben-tabelle">
+          <thead>
+            <tr id="ueberschrift-aufgaben">
+              <th>Erledigt:</th>
+              <th>Fach:</th>
+              <th>Aufgabe:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td contenteditable="true" oninput="farbeAnpassen(this)"></td>
+              <td contenteditable="true"></td>
+            </tr>
+          </tbody>
+        </table>
+        <button onclick="aufgabeHinzufuegen()">Aufgabe hinzufügen</button>
+      </div>
+    </div>
 
     <script>
+      function aufgabeHinzufuegen() {
+        const tabelle = document
+          .getElementById("aufgaben-tabelle")
+          .getElementsByTagName("tbody")[0];
+
+        // Neue Zeile erstellen
+        const neueZeile = document.createElement("tr");
+
+        // Erste Zelle: Checkbox
+        const zelleCheckbox = document.createElement("td");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        zelleCheckbox.appendChild(checkbox);
+
+        // Zweite Zelle: Fach, contenteditable, oninput Event
+        const zelleFach = document.createElement("td");
+        zelleFach.contentEditable = "true";
+        zelleFach.setAttribute("oninput", "farbeAnpassen(this)");
+
+        // Dritte Zelle: Aufgabe, contenteditable
+        const zelleAufgabe = document.createElement("td");
+        zelleAufgabe.contentEditable = "true";
+
+        // Zellen an die neue Zeile anhängen
+        neueZeile.appendChild(zelleCheckbox);
+        neueZeile.appendChild(zelleFach);
+        neueZeile.appendChild(zelleAufgabe);
+
+        tabelle.appendChild(neueZeile);
+      }
+
       const zellen = document.querySelectorAll(
         "#stundenplan td[contenteditable]"
       );
