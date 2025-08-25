@@ -108,7 +108,7 @@ function stundenplanLaden() {
 function stundenplanZurücksetzen() {
   localStorage.removeItem("stundenplan");
   zellen.forEach((zelle) => (zelle.innerText = ""));
-  zellen.forEach((zelle) => (zelle.className = "")); // Klassen entfernen
+  zellen.forEach((zelle) => (zelle.className = ""));
   alert("Stundenplan gelöscht.");
 }
 
